@@ -1,6 +1,7 @@
 import { CSSProperties } from "react";
+import { ItemCounterProps } from "./ItemCounterProps";
 
-export const ItemCounter = () => {
+export const ItemCounter = ({ name, quantity }: ItemCounterProps) => {
   const estilo: CSSProperties = {
     display: "flex",
     alignItems: "center",
@@ -14,10 +15,10 @@ export const ItemCounter = () => {
           width: 150,
         }}
       >
-        Nintendo
+        {name}
       </span>
       <button>+1</button>
-      <span>10</span>
+      <span>{quantity}</span>
       <button>-1</button>
     </section>
   );

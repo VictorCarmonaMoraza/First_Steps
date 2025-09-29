@@ -2,6 +2,9 @@ import { CSSProperties } from "react";
 import { ItemCounterProps } from "./ItemCounterProps";
 
 export const ItemCounter = ({ name, quantity }: ItemCounterProps) => {
+  const handleClick = () => {
+    console.log(`Click en ${name}`);
+  };
   const estilo: CSSProperties = {
     display: "flex",
     alignItems: "center",
@@ -17,9 +20,18 @@ export const ItemCounter = ({ name, quantity }: ItemCounterProps) => {
       >
         {name}
       </span>
-      <button>+1</button>
+      <button
+        onMouseEnter={() => {
+          console.log(`Mouse Enter ${name}`);
+        }}
+        onClick={() => {
+          console.log(`Click ${name}`);
+        }}
+      >
+        +1
+      </button>
       <span>{quantity}</span>
-      <button>-1</button>
+      <button onClick={handleClick}>-1</button>
     </section>
   );
 };

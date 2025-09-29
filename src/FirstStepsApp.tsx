@@ -8,6 +8,12 @@ interface ItemInCart {
 const itemsInCart: ItemInCart[] = [
   { productName: "Nintendo", quantity: 12 },
   { productName: "Pro Controller", quantity: 3 },
+  { productName: "Nintendo ", quantity: 5 },
+];
+
+const itemsInCart2: ItemInCart[] = [
+  { productName: "Nintendo2", quantity: 12 },
+  { productName: "Pro Controller2", quantity: 3 },
   { productName: "Nintendo 2", quantity: 5 },
 ];
 
@@ -30,7 +36,7 @@ export function FirstStepsApp() {
       <hr />
       <p>FORMA 2</p>
       {/* FORMA 2 */}
-      {itemsInCart.map(({ productName, quantity }) => (
+      {itemsInCart2.map(({ productName, quantity }) => (
         <ItemCounter key={productName} name={productName} quantity={quantity} />
       ))}
     </>

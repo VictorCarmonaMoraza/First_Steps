@@ -1,5 +1,7 @@
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 import { ItemCounterProps } from "./ItemCounterProps";
+import "./ItemCounter.css";
+import styles from "./ItemCounter.module.css";
 
 export const ItemCounter = ({ name, quantity = 1 }: ItemCounterProps) => {
   //Los hooks van al principio
@@ -14,21 +16,10 @@ export const ItemCounter = ({ name, quantity = 1 }: ItemCounterProps) => {
     }
   };
 
-  //   const handleClick = () => {
-  //     console.log(`Click en ${name}`);
-  //   };
-  const estilo: CSSProperties = {
-    display: "flex",
-    alignItems: "center",
-    gap: 10,
-    marginTop: 10,
-  };
   return (
-    <section style={estilo}>
+    <section className={styles["item-row"]}>
       <span
-        style={{
-          width: 150,
-        }}
+        className={`${count === 1 ? "counter-red" : "counter-black"} item-text`}
       >
         {name}
       </span>
